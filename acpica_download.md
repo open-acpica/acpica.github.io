@@ -9,7 +9,7 @@
 
 ## Source Code Tree
 
-[Release Notes (April 2026)](https://cdrdv2.intel.com/v1/dl/getContent/917301?explicitVersion=true)
+[Release Notes (September 2026)](https://github.com/open-acpica/acpica/releases/tag/20260930)
 
 The entire source code for the ACPICA project is maintained under the
 Git version control system in a single repository.
@@ -23,37 +23,40 @@ as individual bug fixes and features are completed.
 The current head of the Git tree is not fully evaluated and may or may
 not work. Please use the latest release instead.
 
-[View the ACPICA Source Code on GitHub](https://github.com/acpica/acpica/)
+[View the ACPICA Source Code on GitHub](https://github.com/open-acpica/acpica/)
 
 ### Direct Access to the Public ACPICA Git Repository
 The Git repository can be directly accessed through
-git://github.com/acpica/acpica.git
+https://github.com/open-acpica/acpica.git
 
 For example:
 ```
-git clone git://github.com/acpica/acpica.git
+git clone https://github.com/open-acpica/acpica.git
 ```
 
 ## UNIX Source Code Packages
-[UNIX Format Source Code and Build Environment with an Intel License (.tar.gz, 1.94 MB)](/content/www/us/en/download/776303/acpi-component-architecture-downloads-unix-format-source-code-and-build-environment-with-an-intel-license.html)
+All packages are attached to the
+[latest GitHub release](https://github.com/open-acpica/acpica/releases/latest).
+ACPICA is licensed under the BSD-3-Clause or the GPL-2.0-only license, and
+both license texts are included in the packages.
+
+UNIX Format Source Code and Build Environment
+([.tar.gz, 1.53 MB](https://github.com/open-acpica/acpica/releases/download/20260930/acpica-unix-20260930.tar.gz),
+[.zip, 1.86 MB](https://github.com/open-acpica/acpica/releases/download/20260930/acpica-unix-20260930.zip))
 
 Includes the entire ACPICA source, makefiles, and ACPI utilities.
 
-[UNIX Format Source Code and Build Environment with a Dual License (.tar.gz, 1.66 MB)](/content/www/us/en/download/776307/acpi-component-architecture-downloads-unix-format-source-code-and-build-environment-with-a-dual-license.html)
-
-Includes the entire ACPICA source, makefiles, and ACPI utilities, with
-the dual license included in the module headers.
-
-**NOTE**\
-The unix2 source package is deprecated since the dual license,
-along with the Intel license, is now included in all source modules.
-This package will be removed from future ACPICA releases.
-
-
-[UNIX Format ASL Test Suite (.tar.gz, 1.91 MB)](/content/www/us/en/download/776310/acpi-component-architecture-downloads-unix-format-asl-test-suite.html)
+UNIX Format ASL Test Suite
+([.tar.gz, 2.03 MB](https://github.com/open-acpica/acpica/releases/download/20260930/acpitests-unix-20260930.tar.gz),
+[.zip, 3.66 MB](https://github.com/open-acpica/acpica/releases/download/20260930/acpitests-unix-20260930.zip))
 
 Test suite used to validate ACPICA. This includes ASL files and project
 makefiles.
+
+**NOTE**\
+The "Source code" archives that GitHub generates automatically for each
+release are snapshots of the Git tree. They differ in layout from the
+acpica-unix packages above.
 
 The UNIX or Linux versions of the user-space ACPICA utilities can be
 built from the UNIX ACPICA source code package using the following
@@ -68,8 +71,8 @@ Requirements for generating ACPICA tools from source code:
     -   Bison: version 2.4.1 or later
 -   iASL has been generated with these recent versions of Flex and
     Bison:
-    -   Flex: version 2.5.39
-    -   Bison: version 3.0.4
+    -   Flex: version 2.6.4
+    -   Bison: version 3.8.2
 
 Download and then unpack the UNIX Format Source Code and Build
 Environment package:
@@ -94,6 +97,8 @@ make acpiexec
 make acpihelp
 make acpisrc
 make acpibin
+make acpidump
+make acpiexamples
 ```
 
 To install the generated tools in /usr/bin:
@@ -103,104 +108,74 @@ cd acpica-unix-VERSION
 make install
 ```
 
+## Linux Binary Tools {#linux-binary-tools .margin-btm-1x}
+Prebuilt x86-64 Linux binaries of the ACPICA utilities are attached to the
+[latest GitHub release](https://github.com/open-acpica/acpica/releases/latest):
+
+Major tools and utilities:
+- [iasl](https://github.com/open-acpica/acpica/releases/download/20260930/iasl) -
+  ACPI Source Language Compiler, ACPI Table Compiler, and AML Disassembler
+- [acpiexec](https://github.com/open-acpica/acpica/releases/download/20260930/acpiexec) -
+  Load ACPI tables and run control methods from the user space
+- [acpidump](https://github.com/open-acpica/acpica/releases/download/20260930/acpidump) -
+  Obtain system ACPI tables and save them in an ASCII hex format
+- [acpixtract](https://github.com/open-acpica/acpica/releases/download/20260930/acpixtract) -
+  Extract binary ACPI tables from an ASCII acpidump
+- [acpihelp](https://github.com/open-acpica/acpica/releases/download/20260930/acpihelp) -
+  Help utility for ASL operators, AML opcodes, and ACPI Predefined Names
+
+Miscellaneous utilities:
+- [acpisrc](https://github.com/open-acpica/acpica/releases/download/20260930/acpisrc) -
+  Convert ACPICA code to Linux format
+- [acpibin](https://github.com/open-acpica/acpica/releases/download/20260930/acpibin) -
+  Miscellaneous manipulation of binary ACPI tables
+- [acpiexamples](https://github.com/open-acpica/acpica/releases/download/20260930/acpiexamples) -
+  Example ACPICA initialization and usage code
+
+The release log for the latest version is available as
+[changelogs.md](https://github.com/open-acpica/acpica/releases/download/20260930/changelogs.md).
+
 ## Linux Support {#linux-support .margin-btm-1x}
 Starting with the Linux kernel version 2.4, ACPICA is embedded within
 the Linux kernel. There is no specific Linux source code package for
 ACPICA. Instead, new ACPICA code is released to Linux by the ACPICA team
 through the following procedure:
 
-1.The Linux version of ACPICA is created from the UNIX release
-  package---the code is converted to Linux format through an ACPICA
-  utility (AcpiSrc) and lindent.
-2.Individual patches are created, merged with the current Linux source
-  tree, and released to Linux.
+1. The Linux version of each ACPICA commit is generated from the Git
+   tree - the code is converted to Linux format through an ACPICA
+   utility (AcpiSrc) and lindent (see the generate/linux scripts).
+2. Individual patches are created, merged with the current Linux source
+   tree, and released to Linux.
 
 The Linux versions of the user-space ACPICA utilities (iASL, AcpiExec,
 AcpiXtract, and so forth) can be built from the UNIX ACPICA source code
 package.
 
-## Windows Source Code Packages
-[Windows Format Source Code and Build Environment (.zip, 3.09 MB)](/content/www/us/en/download/776313/acpi-component-architecture-downloads-windows-format-source-code-and-build-environment.html)
-
-Includes the entire ACPICA source, Microsoft Visual C++\* project files,
-and ACPICA utilities.
-
-[Windows Format Test Suite (.zip, 3.29 MB)](/content/www/us/en/download/776318/acpi-component-architecture-downloads-windows-format-test-suite.html)
-
-Test suite used to validate ACPICA. This includes ASL files and project
-makefiles.
-
-The Windows versions of the user-space ACPICA utilities can be built
-from the Windows ACPICA source code package via the following
-instructions.
-
-The Microsoft Visual Studio 2017 project file is located here:
-```
-generate/msvc2017/AcpiComponents.sln
-```
-
-The Windows versions of GNU Flex/Bison must be installed, and they must
-be installed in a directory that contains no embedded spaces in the
-pathname. They cannot be installed in the default c:\\Program Files
-directory. This is a bug in Bison. The default Windows project file for
-iASL assumes that these tools are installed at this location:
-
-```
-c:\GnuWin32
-```
-
-Once the tools are installed, ensure that this path is added to the
-default system **$PATH** environment variable:
-
-```
-c:\GnuWin32\bin
-```
-
-At this point, you will need to reboot Windows to make the system aware of the
-updated **$PATH**.
-
-iASL has been generated with these versions of Flex or Bison for Windows:
-
-- [Flex for Windows: v2.5.4a](https://gnuwin32.sourceforge.net/packages/flex.htm)
-- [Bison for Windows: v2.4.1](https://gnuwin32.sourceforge.net/packages/bison.htm)
-
-## Windows Binary Tools {#windows-binary-tools .margin-btm-1x}
-The Windows versions of the various tools are zipped in a single file
-that is available here:
-
-[iASL Compiler and Windows ACPI Tools (.zip, 1.31 MB)](/content/www/us/en/download/774881/acpi-component-architecture-downloads-windows-binary-tools.html)
-
-Major tools and utilities:
-- iASL - ACPI Source Language Compiler, ACPI Table Compiler, and AML
-  Disassembler
-- AcpiExec - Load ACPI tables and run control methods from the user
-  space
-- AcpiDump - Obtain system ACPI tables and save them in an ASCII hex
-  format
-- AcpiXtract - Extract binary ACPI tables from an ASCII acpidump
-- AcpiHelp - Help utility for ASL operators, AML opcodes, and ACPI
-  Predefined Names
-
-Miscellaneous utilities:
-- AcpiSrc - Convert ACPICA code to Linux format
-- AcpiBin - Miscellaneous manipulation of binary ACPI tables
-
-Documentation and demo code:
-- changes.txt - ACPICA release log file
-- badcode.asl - Demo ASL file containing iASL error detection
-  examples
+## Windows Support {#windows-support .margin-btm-1x}
+Windows source code packages, Microsoft Visual C++ project files, and
+Windows binary tools are no longer provided, starting with version
+20260930. Older Windows packages remain available from the
+[previous releases](#download-previous-versions).
 
 ## UEFI Support {#uefi-support .clear-font}
-
-[Binary Acpidump.efi Files for IA-32 and X64 (tar.gz, 27 KB)](/content/www/us/en/download/775118/acpi-component-architecture-downloads-uefi-support.html)
+Acpidump.efi binaries are not part of the release. They can be built
+from the Git tree using the EDK2 build environment in
+[generate/efi](https://github.com/open-acpica/acpica/tree/master/generate/efi)
+(IA32, X64 and RISCV64 are supported).
 
 ## Download Previous Versions {#download-previous-versions .margin-btm-1x}
+**2026**
+- [20260408](https://github.com/open-acpica/acpica/releases/tag/20260408)
+
 **2025**
-- [20251212](/content/www/us/en/download/775127/acpi-component-architecture-downloads-previous-releases.html)
-- [20250807](/content/www/us/en/download/775127/872287/acpi-component-architecture-downloads-previous-releases.html)
-- [20250404](/content/www/us/en/download/775127/852053/acpi-component-architecture-downloads-previous-releases.html)
+- [20251212](https://github.com/open-acpica/acpica/releases/tag/20251212)
+- [20250807](https://github.com/open-acpica/acpica/releases/tag/20250807)
+- [20250404](https://github.com/open-acpica/acpica/releases/tag/R2025_04_04)
 
 **2024**
-- [20241212](/content/www/us/en/download/775127/843403/acpi-component-architecture-downloads-previous-releases.html)
-- [20240927](/content/www/us/en/download/775127/835687/acpi-component-architecture-downloads-previous-releases.html)
-- [20240827](/content/www/us/en/download/775127/831973/acpi-component-architecture-downloads-previous-releases.html)
+- [20241212](https://github.com/open-acpica/acpica/releases/tag/R2024_12_12)
+- [20240927](https://github.com/open-acpica/acpica/releases/tag/R09_27_24)
+- [20240827](https://github.com/open-acpica/acpica/releases/tag/version-20240827)
+- [20240321](https://github.com/open-acpica/acpica/releases/tag/G20240322)
+
+[All releases on GitHub](https://github.com/open-acpica/acpica/releases)

@@ -40,7 +40,7 @@ ACPICA code is fairly mature and implements the following:
 - A resource manager
 - Fixed and general-purpose event support
 - ACPI hardware support
-- Support for the ACPI 5.0 specification
+- Support for the ACPI 6.6 specification
 
 ## How It Works
 - ACPICA defines and implements a group of software components for
@@ -67,9 +67,12 @@ Major kernel-level components:
 User-space tools and utilities:
 - ACPI Source Code Compiler & Disassembler (iASL)
 - ACPI Simulator/Executer (AcpiExec)
-- ACPI System Table dump to ASCII utility/ (acpidump)
-- ACPI Table Extractor (inverse of acpidump utility)/ (acpixtract)
+- ACPI System Table dump to ASCII utility (AcpiDump)
+- ACPI Table Extractor, inverse of AcpiDump (AcpiXtract)
 - ACPI Help Utility (AcpiHelp)
+- ACPI Binary Table Utility (AcpiBin)
+- ACPICA Source Code Conversion Utility (AcpiSrc)
+- ACPICA Example Code (AcpiExamples)
 
 **NOTE**\
 The ACPICA components run in both kernel mode and user mode.
@@ -83,40 +86,49 @@ For more details, see the [ACPI specifications](https://uefi.org/specifications)
 ## Environments
 ACPICA is written in ANSI C and can be generated under many different
 32-bit and 64-bit operating system development environments. Source code
-packages are provided for Microsoft Windows and UNIX.
+packages are provided in UNIX format (.tar.gz and .zip), together with
+prebuilt Linux binaries of the ACPICA utilities.
 
-- The Windows package includes Visual C++ project files and other
-  ACPI utilities
-- The UNIX package has a format and licensing suitable for inclusion
-  by commercial operating system vendors.
+**NOTE**\
+Windows source packages, Visual C++ project files and Windows binaries are
+no longer provided, starting with version 20260930.
 
 There is no stand-alone Linux source code package since ACPICA updates
 for Linux are provided periodically in patch form. The ACPICA subsystem
 is modified to integrate smoothly with the Linux kernel source. This
 includes conversion of the ACPICA source code to the Linux kernel coding
-standard and licensing under the GNU General Public License.
+standard. In the Linux kernel, ACPICA is dual-licensed under the BSD-3-Clause
+or GPL-2.0 licenses.
 
-[Licensing for ACPICA](https://www.intel.com/content/www/us/en/developer/articles/license/acpica-licensing.html)
+ACPICA is licensed under the
+[BSD-3-Clause](https://github.com/open-acpica/acpica/blob/master/LICENSE.BSD-3-Clause)
+or the
+[GPL-2.0-only](https://github.com/open-acpica/acpica/blob/master/LICENSE.GPL-2.0-only)
+license, at your option.
 
 ## News
 | Date       | Description                                                                   |
 | ---------- | ----------------------------------------------------------------------------- |
+| 2026.09.30 | ACPICA is now licensed under BSD-3-Clause OR GPL-2.0-only                     |
+| 2026.09.30 | Windows packages are discontinued; Linux binaries are published on GitHub     |
+| 2026.09.30 | iASL: Added support for the KEYP, MISC and UBRT ACPI tables                   |
+| 2025.12.12 | Many existing ACPI tables updated to follow the ACPI 6.6 specification        |
 | 2024.08.27 | The ACPI Reduced Hardware mode now supports waking up from the S3 state fully |
-| 2023.03.31 | iASL preprocessor now supports full #define macros                           |
+| 2023.03.31 | iASL preprocessor now supports #define macros (single-line)                   |
 | 2022.03.31 | All Windows binaries are now digitally signed                                 |
 | 2021.12.17 | iASL: Added support for the NHLT, AGDI, and TDEL ACPI tables                  |
 | 2021.06.04 | iASL: Added support for the PRMT, BDAT, RGRT, SVKL and IVRS ACPI tables.      |
 | 2021.04.01 | ACPI 6.4 is now supported in ACPICA version 20210331.                         |
 
 
-[View All](https://www.intel.com/content/www/us/en/developer/articles/news/acpica-news.html)
+[View All Releases](https://github.com/open-acpica/acpica/releases)
 
 ## Support
 For all ACPICA developer discussions, issues, and source code patches,
-subscribe to this [discussion](https://github.com/acpica/acpica/discussions).
+subscribe to this [discussion](https://github.com/open-acpica/acpica/discussions).
 
 To report ACPICA kernel-resident subsystem and ACPICA tools or utility
-issues, submit your issue on [GitHub](https://github.com/acpica/acpica/issues/). 
+issues, submit your issue on [GitHub](https://github.com/open-acpica/acpica/issues/). 
 
 ## FAQ
 ### What is AML? What is ASL?
@@ -131,7 +143,7 @@ interpreted by the OS's ACPI AML interpreter.
 
 ### How often is ACPICA updated?
 ACPICA is actively maintained and updated. Releases occur approximately
-on a monthly to quarterly basis and contain new features and bug fixes.
+every three to four months and contain new features and bug fixes.
 ACPICA also closely tracks new releases of the ACPI specification.
 
 ### Which operating systems use ACPICA to enable ACPI?
@@ -140,9 +152,14 @@ base to enable ACPI for power management and configuration, as well as
 the iASL compiler to write BIOS implementations.
 
 ### How is the ACPICA source code licensed?
-ACPICA can be licensed under the GNU General Public License or through a
-separate license that may be more favorable to commercial operating
-system vendors. See the [source code license header](https://www.intel.com/content/www/us/en/developer/articles/license/acpica-licensing.html) for specifics.
+Starting with version 20260930, ACPICA is licensed under the BSD-3-Clause
+or the GPL-2.0-only license, at your option. Each source file carries the
+`SPDX-License-Identifier: BSD-3-Clause OR GPL-2.0-only` header and the full
+license texts are included in the
+[LICENSE.BSD-3-Clause](https://github.com/open-acpica/acpica/blob/master/LICENSE.BSD-3-Clause)
+and
+[LICENSE.GPL-2.0-only](https://github.com/open-acpica/acpica/blob/master/LICENSE.GPL-2.0-only)
+files.
 
 ### What is the implicit return issue?
 The AML definition blocks in some systems contain an error, where the

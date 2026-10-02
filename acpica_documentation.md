@@ -16,7 +16,7 @@ The current release of ACPICA is version 20260930
 
 - [ACPI Source Language: ASL 2.0 Introduction and Overview](https://cdrdv2.intel.com/v1/dl/getContent/772723)
 
-- [ACPI Specification Version 6.5 (August 2022)](https://uefi.org/specs/ACPI/6.5/)
+- [ACPI Specification Version 6.6 (May 2025)](https://uefi.org/specs/ACPI/6.6/)
 
 - [All ACPI Specifications](https://uefi.org/specifications)
 
@@ -46,10 +46,16 @@ The current release of ACPICA is version 20260930
 - [Multiprocessor Startup for ARM\* Platforms (Version 1, September 23, 2014)](https://cdrdv2.intel.com/v1/dl/getContent/772757)
     - Protocol for starting multiple ARM\* processors.
 
-- [Core System Resources Table (CSRT November 14, 2011)](https://cdrdv2.intel.com/v1/dl/getContent/772760)\
+- [Core System Resources Table (CSRT November 14, 2011)](https://cdrdv2.intel.com/v1/dl/getContent/772760)
     - Definition of CSRT ACPI table for shared hardware functions.
 
 ## Release notes
+Starting with version 20260930, release notes are published with each
+[GitHub release](https://github.com/open-acpica/acpica/releases). The full
+change history is kept in
+[documents/changelogs.md](https://github.com/open-acpica/acpica/blob/master/documents/changelogs.md).
+
+- [2026.09](https://github.com/open-acpica/acpica/releases/tag/20260930)
 - [2026.04](https://cdrdv2.intel.com/v1/dl/getContent/917301?explicitVersion=true)
 - [2025.12](https://cdrdv2.intel.com/v1/dl/getContent/871483?explicitVersion=true)
 - [2025.08](https://cdrdv2.intel.com/v1/dl/getContent/864397?explicitVersion=true)
