@@ -14,11 +14,11 @@
 The entire source code for the ACPICA project is maintained under the
 Git version control system in a single repository.
 
-**NOTE**\
-Depending on your needs, the head of the Git tree may or may
-not be appropriate. The Git tree is a working tree that grows as the
-next full release of ACPICA is constructed. Commits to the tree are made
-as individual bug fixes and features are completed.
+> [!NOTE]
+> Depending on your needs, the head of the Git tree may or may
+> not be appropriate. The Git tree is a working tree that grows as the
+> next full release of ACPICA is constructed. Commits to the tree are made
+> as individual bug fixes and features are completed.
 
 The current head of the Git tree is not fully evaluated and may or may
 not work. Please use the latest release instead.
@@ -53,10 +53,10 @@ UNIX Format ASL Test Suite
 Test suite used to validate ACPICA. This includes ASL files and project
 makefiles.
 
-**NOTE**\
-The "Source code" archives that GitHub generates automatically for each
-release are snapshots of the Git tree. They differ in layout from the
-acpica-unix packages above.
+> [!NOTE]
+> The "Source code" archives that GitHub generates automatically for each
+> release are snapshots of the Git tree. They differ in layout from the
+> acpica-unix packages above.
 
 The UNIX or Linux versions of the user-space ACPICA utilities can be
 built from the UNIX ACPICA source code package using the following
@@ -108,7 +108,7 @@ cd acpica-unix-VERSION
 make install
 ```
 
-## Linux Binary Tools {#linux-binary-tools .margin-btm-1x}
+## Linux Binary Tools
 Prebuilt x86-64 Linux binaries of the ACPICA utilities are attached to the
 [latest GitHub release](https://github.com/open-acpica/acpica/releases/latest):
 
@@ -135,7 +135,7 @@ Miscellaneous utilities:
 The release log for the latest version is available as
 [changelogs.md](https://github.com/open-acpica/acpica/releases/download/20260930/changelogs.md).
 
-## Linux Support {#linux-support .margin-btm-1x}
+## Linux Support
 Starting with the Linux kernel version 2.4, ACPICA is embedded within
 the Linux kernel. There is no specific Linux source code package for
 ACPICA. Instead, new ACPICA code is released to Linux by the ACPICA team
@@ -151,19 +151,19 @@ The Linux versions of the user-space ACPICA utilities (iASL, AcpiExec,
 AcpiXtract, and so forth) can be built from the UNIX ACPICA source code
 package.
 
-## Windows Support {#windows-support .margin-btm-1x}
+## Windows Support
 Windows source code packages, Microsoft Visual C++ project files, and
 Windows binary tools are no longer provided, starting with version
 20260930. Older Windows packages remain available from the
 [previous releases](#download-previous-versions).
 
-## UEFI Support {#uefi-support .clear-font}
+## UEFI Support
 Acpidump.efi binaries are not part of the release. They can be built
 from the Git tree using the EDK2 build environment in
 [generate/efi](https://github.com/open-acpica/acpica/tree/master/generate/efi)
 (IA32, X64 and RISCV64 are supported).
 
-## Download Previous Versions {#download-previous-versions .margin-btm-1x}
+## Download Previous Versions
 **2026**
 - [20260408](https://github.com/open-acpica/acpica/releases/tag/20260408)
 

@@ -31,13 +31,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install pandoc
+        run: |
+          curl -sSfL -o pandoc.deb https://github.com/jgm/pandoc/releases/download/3.6/pandoc-3.6-1-amd64.deb
+          sudo dpkg -i pandoc.deb
+      - name: Render markdown
+        run: ./build.sh _site
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Upload the rendered site
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5

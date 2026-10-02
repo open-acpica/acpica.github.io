@@ -74,8 +74,8 @@ User-space tools and utilities:
 - ACPICA Source Code Conversion Utility (AcpiSrc)
 - ACPICA Example Code (AcpiExamples)
 
-**NOTE**\
-The ACPICA components run in both kernel mode and user mode.
+> [!NOTE]
+> The ACPICA components run in both kernel mode and user mode.
 
 ## System Requirements
 - Write operating systems in C (or able to interface to C code).
@@ -89,9 +89,9 @@ ACPICA is written in ANSI C and can be generated under many different
 packages are provided in UNIX format (.tar.gz and .zip), together with
 prebuilt Linux binaries of the ACPICA utilities.
 
-**NOTE**\
-Windows source packages, Visual C++ project files and Windows binaries are
-no longer provided, starting with version 20260930.
+> [!NOTE]
+> Windows source packages, Visual C++ project files and Windows binaries are
+> no longer provided, starting with version 20260930.
 
 There is no stand-alone Linux source code package since ACPICA updates
 for Linux are provided periodically in patch form. The ACPICA subsystem
